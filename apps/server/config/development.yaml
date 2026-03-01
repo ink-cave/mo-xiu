@@ -1,0 +1,24 @@
+app:
+  port: 3000
+
+# JWT 配置
+jwt:
+  secret: 'your-secret-key'
+  expiresIn: 3600 # 单位秒，1小时
+
+# 数据库核心配置
+database:
+  # 基础连接项
+  type: postgres
+  host: localhost # 数据库地址，本地默认 localhost
+  port: 5432 # 数字类型，不要加引号！加引号会变成字符串导致连接失败
+  username: postgres # PostgreSQL 实际存在的用户名（比如默认的 postgres）
+  password: '1206' # 含特殊字符用双引号包裹，无需额外转义
+  database: postgres # 必须是 PostgreSQL 中已创建的数据库名（提前手动创建！）
+
+  # TypeORM 关键配置（避免连接后同步失败）
+  synchronize: true # 开发环境可开，生产环境必须关
+  logging: true # 开启日志，方便排查连接问题
+  keepConnectionAlive: true
+  retryAttempts: 3 # 连接失败重试次数
+  retryDelay: 1000 # 重试间隔

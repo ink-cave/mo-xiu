@@ -1,0 +1,14 @@
+app:
+  port: 8080
+
+database:
+  type: postgres
+  host: prod-postgres-server # 生产服务器地址
+  port: 5432 # 数字类型！禁止加引号
+  username: prod_nest_user # 生产环境创建的专用用户
+  password: ${PROD_DB_PWD} # 敏感密码从系统环境变量注入，不硬编码
+  database: nest_prod_db # 生产数据库名
+  synchronize: false # 生产环境必关，用迁移同步
+  logging: error
+  retryAttempts: 5
+  retryDelay: 3000

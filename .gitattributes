@@ -1,0 +1,15 @@
+# 让所有文本文件使用 LF 换行符
+* text=auto eol=lf
+
+# 明确指定脚本文件必须使用 LF
+*.sh text eol=lf
+*.bash text eol=lf
+*.husky/* text eol=lf
+
+# 二进制文件不做任何转换
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary

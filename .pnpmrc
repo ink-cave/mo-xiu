@@ -1,0 +1,14 @@
+# .pnpmrc
+# 允许这些包在安装时执行脚本，避免每次都要手动选择
+trusted_dependencies = [
+  "@nestjs/core",
+  "bcrypt",
+  "esbuild",
+  "sharp",
+  "sqlite3",
+  "unrs-resolver",
+  "vue-demi"
+]
+
+# 也可以直接关闭脚本检查（二选一，推荐上面的白名单方式）
+# ignore-scripts = false
