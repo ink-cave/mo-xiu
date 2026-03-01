@@ -1,13 +1,71 @@
 {
 	"name": "@mo-xiu/web-components",
 	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
+	"description": "原生基座 Web Components 组件库，不依赖任何前端框架，可被上层框架包二次封装使用",
+	"main": "dist/index.js",
+	"module": "dist/index.mjs",
+	"types": "dist/index.d.ts",
+	"exports": {
+		".": {
+			"import": "./dist/index.mjs",
+			"require": "./dist/index.js",
+			"types": "./dist/index.d.ts"
+		},
+		"./button": {
+			"import": "./dist/components/Button/index.mjs",
+			"require": "./dist/components/Button/index.js",
+			"types": "./dist/components/Button/index.d.ts"
+		},
+		"./input": {
+			"import": "./dist/components/Input/index.mjs",
+			"require": "./dist/components/Input/index.js",
+			"types": "./dist/components/Input/index.d.ts"
+		},
+		"./card": {
+			"import": "./dist/components/Card/index.mjs",
+			"require": "./dist/components/Card/index.js",
+			"types": "./dist/components/Card/index.d.ts"
+		},
+		"./slider": {
+			"import": "./dist/components/Slider/index.mjs",
+			"require": "./dist/components/Slider/index.js",
+			"types": "./dist/components/Slider/index.d.ts"
+		},
+		"./switch": {
+			"import": "./dist/components/Switch/index.mjs",
+			"require": "./dist/components/Switch/index.js",
+			"types": "./dist/components/Switch/index.d.ts"
+		},
+		"./checkbox": {
+			"import": "./dist/components/Checkbox/index.mjs",
+			"require": "./dist/components/Checkbox/index.js",
+			"types": "./dist/components/Checkbox/index.d.ts"
+		},
+		"./radio": {
+			"import": "./dist/components/Radio/index.mjs",
+			"require": "./dist/components/Radio/index.js",
+			"types": "./dist/components/Radio/index.d.ts"
+		}
+	},
 	"scripts": {
+		"build": "tsup",
+		"dev": "tsup --watch",
 		"test": "vitest run"
 	},
-	"keywords": [],
+	"keywords": [
+		"web-components",
+		"native",
+		"ui",
+		"tailwind"
+	],
 	"author": "",
 	"license": "ISC",
-	"packageManager": "pnpm@10.30.2"
+	"packageManager": "pnpm@10.30.2",
+	"devDependencies": {
+		"@types/node": "^20.11.30",
+		"tailwindcss": "^4.0.0",
+		"tsup": "^8.0.2",
+		"typescript": "^5.4.2",
+		"vitest": "^1.4.0"
+	}
 }

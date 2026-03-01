@@ -1,28 +1,28 @@
-import http from 'http';
+import http from "http";
 
 const options = {
-  hostname: 'localhost',
-  port: 3000,
-  path: '/api/user/login',
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
+	hostname: "localhost",
+	port: 3000,
+	path: "/api/user/login",
+	method: "POST",
+	headers: {
+		"Content-Type": "application/json",
+	},
 };
 
 const req = http.request(options, (res) => {
-  let data = '';
-  res.on('data', (chunk) => {
-    data += chunk;
-  });
-  res.on('end', () => {
-    console.log('Response:', data);
-  });
+	let data = "";
+	res.on("data", (chunk) => {
+		data += chunk;
+	});
+	res.on("end", () => {
+		console.log("Response:", data);
+	});
 });
 
-req.on('error', (e) => {
-  console.error('Error:', e);
+req.on("error", (e) => {
+	console.error("Error:", e);
 });
 
-req.write(JSON.stringify({ username: 'admin', password: 'admin123' }));
+req.write(JSON.stringify({ username: "admin", password: "admin123" }));
 req.end();
